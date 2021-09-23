@@ -1,18 +1,43 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
-    }
-  ],
-  "comments": [
+      "name": "table",
+      "description": "ctest",
+      "id": "1002",
+      "price": "1000"
+    },
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "name": "chair",
+      "description": "ctesthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+      "id": "1001",
+      "price": "2000"
+    },
+    {
+      "name": "Pc",
+      "description": "ctest",
+      "id": "1003",
+      "price": "1000"
+    },
+    {
+      "name": "tcnnn",
+      "description": "ctest",
+      "id": "1004",
+      "price": "1200"
+    },
+    {
+      "name": "Mouse",
+      "description": "ctestttt",
+      "id": "1006",
+      "price": "1000"
+    },
+    {
+      "name": "Table",
+      "description": "ctest",
+      "id": "1009",
+      "price": "1000"
     }
   ],
+  "comments": [],
   "profile": {
     "name": "typicode"
   }
