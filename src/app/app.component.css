@@ -1,0 +1,21 @@
+/* .routerclass{
+    border: 5px solid white;
+    background: aliceblue;
+    height: 35px;
+    text-decoration: auto;
+    color: #191515;
+    padding-top: 0px;
+    border-radius: 20px;
+    margin: 5px;
+} */
+
+.routerclass{
+position: absolute;
+border: 5px solid white;
+background: aliceblue;
+text-decoration: auto;
+text-decoration: auto;
+color: #191515;
+border-radius: 20px;
+margin: 9px;
+}

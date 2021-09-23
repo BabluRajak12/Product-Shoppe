@@ -1,0 +1,107 @@
+
+<div class="container">
+  <h1 class="titleheader">
+    Welcome to Product Application !</h1>
+    <h1 class="titleheaderr">
+    Product List
+  </h1>
+<table class="table mt-3">
+  <thead class="tablehead">
+    <tr style="background-color: white;">
+      <th style="width:35%; text-align:center;font-size: larger;">Id</th>
+      <th class="tableheadth" >Name</th>
+      <th class="tableheadth">Description</th>
+      <th class="tableheadth" >Price</th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody class="tablebody">
+    <tr *ngFor="let row of productData | filter:filter| paginate: { itemsPerPage:5, currentPage: p }"  appHost>
+      <td class="rowpading">{{row.id}}</td>
+      <td class="rowpading">{{row.name | titlecase}}</td>
+      <td class="rowpading">{{row.description | titlecase}}</td>
+      <td class="rowpading">{{row.price | currency:'INR'}}</td>
+      <td>
+        <button (click)="onEdit(row)" class="btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">Edit</button>
+        <button (click)="deleteProduct(row)" class="btn btn-danger mx-3">Delete</button>
+      </td>  
+    </tr>
+  </tbody>
+ 
+</table>
+<ul class="pagination">  
+  <pagination-controls  (pageChange)="p = $event"></pagination-controls>  
+  </ul>
+  <button type="button" (click)="clickAddDisable()" class="btnAdd btn-primary"data-toggle="modal" data-target="#exampleModal">
+    Add Product
+   </button>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header"style="background-color: white; color:black;">
+        <!-- <h5 class="modal-title" style="background-color: white;">Add New Product </h5> -->
+        <h5 class="modal-title" style="background-color: white;">{{formTitle}} </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body" style="background-color: white;color:black;">
+        <form [formGroup]='formvalue' (ngSubmit)="onSubmit()">
+
+          <div class="form-group">
+            <label for="exampleInputid" style="margin-left: 47px;">ID:</label>
+           <input type="text" formControlName="id"  class="form-control" id="exampleInputid" 
+           placeholder="ID" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
+            <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
+              <div *ngIf="f.id.errors.required" class="error"> Id is required</div>
+              
+          </div>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputname" class="labelclassName">Name:</label>
+           <input type="text"  formControlName="name"  class="form-control" id="exampleInputname" 
+           placeholder="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
+            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
+              <div *ngIf="f.name.errors.required" class="error"> Name is required</div>
+          </div>
+          </div>
+
+          
+          <div class="form-group">
+            <label for="exampleInputdescription" class="labelclass">Description:</label>
+            <input type="text" formControlName="description" class="form-control" id="exampleInputdescription" 
+            placeholder="description" [ngClass]="{'is-invalid':submitted && f.description.errors}">
+            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+              <div *ngIf="f.description.errors.required" class="error"> Description is required</div>
+          </div>
+          </div>
+
+
+          <div class="form-group">
+            <label for="exampleInputPrice" class="labelclassPrice">Price:</label>
+            <input type="Text" formControlName="price" class="form-control" id="exampleInputPrice"
+             placeholder="price" [ngClass]="{'is-invalid':submitted && f.price.errors}">
+             <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+              <div *ngIf="f.price.errors.required" class="error">enter price in numeric</div>
+          </div>
+          </div>
+
+          <div class="form-group">
+            <button [disabled]="loading"  *ngIf="showadd" (click)="postProductDetails()"  class="btnAddClose btn-primary">Submit</button>
+            <button type="button" id="cancel" class="btnAddClose btn-secondary" data-dismiss="modal" style="background-color: #FFD700;">Cancel</button>
+            <button (click)="updateProduct(row)" *ngIf="showupdate" class="btnUpdate btn-danger mx-3">Submit</button>
+          </div>
+        </form>
+      </div>
+   
+    </div>
+    
+  </div>
+</div>
+
+</div>
+
+
+

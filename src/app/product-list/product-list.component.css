@@ -1,0 +1,128 @@
+.mt-3 {
+    background-color: #ebebeb;
+}
+.rowpading {
+    padding: 15px;
+    text-align: center;
+    font-size: small;
+}
+.tablebody {
+    font-size: initial;
+    color: black;
+}
+
+.tablehead {
+    font-size: larger;
+    background: white;
+    color: black;
+}
+
+.titleheader{
+position: relative;
+margin-left: 26%;
+margin-top: 0px;
+color: black;
+}
+.titleheaderr {
+position: relative;
+margin-left: 41%;
+margin-top: 0px;
+color: black;
+}
+
+.btn {
+    border: 1px solid black;
+    color:black;
+    height: 50%;
+    margin-left: 5px;
+   border-radius: 5px;
+}
+
+.form-control {
+    display: initial;
+    width: 68% !important;
+    height: 39px;
+    padding: 8px 16px;
+    font-size: 15px;
+    line-height: 1.42857143;
+    color: #2b3e50;
+    background-color: #ffffff;
+    background-image: none;
+    border: 1px solid black;
+    border-radius: 0;
+    box-shadow: inset 0 1px 1px rgb(0 0 0 / 8%);
+    transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.labelclassName {
+    margin-left: 29px;
+}
+
+.labelclassPrice {
+    margin-left: 36px;
+}
+
+.modal-title {
+    font-size: xx-large;
+    text-align: center;
+    margin-top: 0px;
+    margin-bottom: -27px;
+}
+
+.btnAddClose {
+    border: 1px solid black;
+    color: black;
+    height: 50%;
+    margin-left: 10px;
+    border-radius: 5px;
+    position: relative;
+    left: 68px;
+    width: 106px;
+    padding: 8px;
+    background-color: #2c91f4;
+}
+
+.btnUpdate{
+ 
+    border: 1px solid black;
+    color: black;
+    margin-left: 75px;
+    border-radius: 5px;
+    width: 106px;
+    padding: 9px;
+    margin-top: -2px;
+    background-color: #2c91f4;
+}
+.modal-dialog {
+    width: 440px;
+}
+
+.error {
+    color: red;
+    margin-left: 127px
+}
+
+tr:nth-child(even)  {background: #FFF} 
+tr:nth-child(odd) {background: #e6e3e3fa}
+
+.tableheadth {
+    width:15%;
+    text-align:center;
+    font-size: larger;
+}
+
+.btnAdd {
+    background-color:#2f9f2f;
+    border-radius: 5px;
+    left: 10%;
+    position: relative;
+    top: 17px;
+    height: 31px;
+
+}
+
+.pagination {
+   margin-top:0px !important
+}
+
+
