@@ -25,7 +25,7 @@ export class ProductListComponent implements OnInit {
   ngOnInit() {
     this.formvalue = this.formbuilder.group({
       id:['',[Validators.required,Validators.maxLength(4)]],
-      name: ['', [Validators.required, Validators.pattern(/^[A-Z a-z]/)]],
+      name: ['', [Validators.required, Validators.pattern(/^[A-Z]/)]],
       description: ['', Validators.required],
       price: ['', Validators.required],
     })

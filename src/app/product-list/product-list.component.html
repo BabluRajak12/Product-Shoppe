@@ -19,7 +19,9 @@
     <tr *ngFor="let row of productData | filter:filter| paginate: { itemsPerPage:5, currentPage: p }"  appHost>
       <td class="rowpading">{{row.id}}</td>
       <td class="rowpading">{{row.name | titlecase}}</td>
-      <td class="rowpading">{{row.description | titlecase}}</td>
+      <td class="rowpading" title="{{row.description}}">
+        {{(row.description.length>20)? (row.description| titlecase | slice:0:20)+'..':(row.description | titlecase)}}
+      </td>
       <td class="rowpading">{{row.price | currency:'INR'}}</td>
       <td>
         <button (click)="onEdit(row)" class="btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">Edit</button>
@@ -65,6 +67,7 @@
            placeholder="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
             <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
               <div *ngIf="f.name.errors.required" class="error"> Name is required</div>
+              <div *ngIf="f.name.errors.pattern" class="error"> Name Should start with capital letter</div>
           </div>
           </div>
 
