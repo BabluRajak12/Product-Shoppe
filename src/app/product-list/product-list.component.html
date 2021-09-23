@@ -57,6 +57,7 @@
            placeholder="ID" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
             <div *ngIf="submitted && f.id.errors" class="invalid-feedback">
               <div *ngIf="f.id.errors.required" class="error"> Id is required</div>
+              <div *ngIf="f.id.errors.maxlength" class="error"> Maximum length allowed 4</div>
               
           </div>
           </div>
