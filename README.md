@@ -1,7 +1,7 @@
 # Product-Shoppe
 Third-party Dependencies
 ************************
-npm install ngf-bootstrap --save, 
+npm install ngf-bootstrap --save,   
 npm install toastr --save, 
 npm install jquery --save, 
 npm install ngx-pagination --save
