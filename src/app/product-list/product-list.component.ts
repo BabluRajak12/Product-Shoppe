@@ -95,6 +95,10 @@ export class ProductListComponent implements OnInit {
 
 
   updateProduct() {
+    if (this.formvalue.invalid) {
+      return;
+    }
+    else{
     this.productmodelObj.id =this.formvalue.value.id;
     this.productmodelObj.name = this.formvalue.value.name;
     this.productmodelObj.description = this.formvalue.value.description;
@@ -107,6 +111,7 @@ export class ProductListComponent implements OnInit {
         this.formvalue.reset();
         this.getallProduct();
       })
+    }
   }
 
 
