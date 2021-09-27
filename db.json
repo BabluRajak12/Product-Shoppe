@@ -1,16 +1,43 @@
 {
   "posts": [
     {
-      "id": 1,
-      "title": "json-server",
-      "author": "typicode"
+      "name": "table",
+      "description": "ctest",
+      "id": "1002",
+      "price": "1000"
+    },
+    {
+      "name": "chair",
+      "description": "ctesthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
+      "id": "1001",
+      "price": "2000"
+    },
+    {
+      "name": "Pc",
+      "description": "ctest",
+      "id": "1003",
+      "price": "1000"
+    },
+    {
+      "name": "tcnnn",
+      "description": "ctest",
+      "id": "1004",
+      "price": "1200"
+    },
+    {
+      "name": "Mouse",
+      "description": "ctestttt",
+      "id": "1006",
+      "price": "1000"
     }
   ],
-  "comments": [
+  "signupUsers": [
     {
-      "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "fullname": "Sagar Javir",
+      "email": "sagar@gmail.com",
+      "password": "12345",
+      "mobile": 123434343,
+      "id": 1
     }
   ],
   "profile": {

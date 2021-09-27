@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import * as $ from 'jquery';
 import { CartService } from './cart.service';
+import { MytoasterService } from './mytoaster.service';
 
 @Component({
   selector: 'app-root',

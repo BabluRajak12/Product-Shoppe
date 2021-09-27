@@ -85,10 +85,10 @@
 
           <div class="form-group">
             <label for="exampleInputPrice" class="labelclassPrice">Price:</label>
-            <input type="Text" formControlName="price" class="form-control" id="exampleInputPrice"
+            <input type="number" formControlName="price" class="form-control" id="exampleInputPrice"
              placeholder="price" [ngClass]="{'is-invalid':submitted && f.price.errors}">
              <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
-              <div *ngIf="f.price.errors.required" class="error">enter price in numeric</div>
+              <div *ngIf="f.price.errors.required" class="error">Price is required</div>
           </div>
           </div>
 
