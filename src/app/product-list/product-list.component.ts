@@ -3,6 +3,8 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ApiService } from '../api.service';
 import { ProductModel } from './product-model';
 import { MytoasterService } from '../mytoaster.service';
+import { ActivatedRoute, Router } from '@angular/router';
+import { ProfileModel } from '../profile/profile/user-model';
 
 @Component({
   selector: 'app-product-list',
@@ -19,8 +21,11 @@ export class ProductListComponent implements OnInit {
   showupdate !: boolean;
   showadd !: boolean;
   submitted = false;
+  userId:number
+  userDetails:ProfileModel
 
-  constructor(private formbuilder: FormBuilder, private api: ApiService,private toastr:MytoasterService) { }
+  constructor(private formbuilder: FormBuilder, private api: ApiService,
+    private toastr:MytoasterService,private route: ActivatedRoute,private navi: Router) { }
 
   ngOnInit() {
     this.formvalue = this.formbuilder.group({
@@ -29,6 +34,11 @@ export class ProductListComponent implements OnInit {
       description: ['', Validators.required],
       price: ['', Validators.required],
     })
+
+    this.userId = Number(this.route.snapshot.paramMap.get("id"));
+      this.api.getUser(this.userId).subscribe(res=>{
+        this.userDetails = res
+      })
     this.getallProduct();
   }
 
@@ -134,6 +144,9 @@ export class ProductListComponent implements OnInit {
     this.submitted = true;
   
   }
+  // onProfilePage(){
+  //   this.navi.navigate(['profile'], { 'queryParams': this.});
+  // }
   
 }
 

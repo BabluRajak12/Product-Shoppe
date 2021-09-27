@@ -17,7 +17,7 @@
     border-radius: 5px;
     height: auto;
 }
-input{
+input,select{
     border-radius: 5px;
 }
 button{

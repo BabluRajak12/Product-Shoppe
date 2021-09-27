@@ -11,6 +11,7 @@ import { HostDirective } from './host.directive';
 import { MytoasterService } from './mytoaster.service';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
+import { ProfileComponent } from './profile/profile/profile.component';
 
 
 
@@ -20,7 +21,8 @@ import { SignupComponent } from './signup/signup.component';
     ProductListComponent,
     HostDirective,
     LoginComponent,
-    SignupComponent
+    SignupComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

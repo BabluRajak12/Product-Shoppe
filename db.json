@@ -38,6 +38,61 @@
       "password": "12345",
       "mobile": 123434343,
       "id": 1
+    },
+    {
+      "fullname": "Shelly Shaw Modak",
+      "email": "shelly@gmail.com",
+      "password": "shelly@123",
+      "mobile": 9007574353,
+      "id": 2
+    },
+    {
+      "fullname": "Shelly Modak",
+      "email": "shelly@gmail.com",
+      "password": "1234",
+      "mobile": 123456789,
+      "role": "Admin",
+      "id": 3
+    },
+    {
+      "fullname": "user 001",
+      "email": "shelly@gmail.com",
+      "password": "1234",
+      "mobile": 123456789,
+      "role": "User",
+      "id": 4
+    },
+    {
+      "fullname": "User1002",
+      "email": "s@gmail.com",
+      "mobile": 123456789,
+      "id": 5
+    },
+    {
+      "fullname": "user 003",
+      "email": "s1@gmail.com",
+      "password": "1234",
+      "mobile": 123456789,
+      "role": "Admin",
+      "id": 6
+    },
+    {
+      "fullname": "s0098",
+      "email": "s2@gmail.com",
+      "password": "1234",
+      "mobile": 123456789,
+      "role": "User",
+      "id": 7
+    },
+    {
+      "fullname": "ssm",
+      "email": "s87@gmail.com",
+      "mobile": 123456789,
+      "password": "1234",
+      "designation": "Developer1",
+      "address": "kolkata",
+      "role": "User",
+      "id": 8
     }
   ],
   "profile": {

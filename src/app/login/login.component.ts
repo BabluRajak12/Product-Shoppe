@@ -27,9 +27,15 @@ export class LoginComponent implements OnInit {
       return a.email === this.loginForm.value.email && a.password === this.loginForm.value.password;
       });
       if(user){
+        console.log(user)
         this.toastr.success("Login success!");
         this.loginForm.reset();
-        this.router.navigate(['productlist']);
+        if(user.role==="User"){
+          this.router.navigate(['productlist',user.id]);
+        }
+        if(user.role==="Admin"){
+          this.router.navigate(['signup']);
+        }
       }
       else{
         this.toastr.warning("User is invalid!");

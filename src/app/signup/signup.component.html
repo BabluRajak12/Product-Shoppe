@@ -26,9 +26,28 @@
               <span class="text-danger" *ngIf="signupForm.controls['email'].dirty && signupForm.hasError('required', 'email')">Email Id is require</span>
             </div>
             <div class="mb-3">
+              <label for="exampleRole" class="form-label">Select User Type</label>
+              <select formControlName="role" class="form-control">
+                <option disabled>Select</option>
+                <option>Admin</option>
+                <option>User</option>
+            </select>
+              <span class="text-danger" *ngIf="signupForm.controls['role'].dirty && signupForm.hasError('required', 'role')">User Type is require</span>
+            </div>
+            <div class="mb-3">
               <label for="exampleInputPassword3" class="form-label">Password</label>
               <input formControlName="password" type="password" class="form-control" id="exampleInputPassword3">
               <span class="text-danger" *ngIf="signupForm.controls['password'].dirty && signupForm.hasError('required', 'password')">Password is require</span>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Designation</label>
+              <input formControlName="designation" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <span class="text-danger" *ngIf="signupForm.controls['designation'].dirty && signupForm.hasError('required', 'designation')">Designation is require</span>
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputEmail1" class="form-label">Address</label>
+              <input formControlName="address" type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+              <span class="text-danger" *ngIf="signupForm.controls['address'].dirty && signupForm.hasError('required', 'address')">Address is require</span>
             </div>
             
             <button type="submit" [disabled]="!signupForm.valid" class="btn btn-primary">Sign up</button>

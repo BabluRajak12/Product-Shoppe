@@ -20,8 +20,12 @@ export class SignupComponent implements OnInit {
    fullname: ['', Validators.required],
    email: ['', Validators.required],
    password: ['', Validators.required],
-   mobile: ['', Validators.required] 
+   mobile: ['', Validators.required] ,
+   role: ['', Validators.required],
+   designation:['', Validators.required],
+   address:['', Validators.required]
   })
+  this.signupForm.controls['role'].setValue("Select", {onlySelf: true})
   }
   signup(){
     this.http.post<any>("http://localhost:3000/signupUsers", this.signupForm.value)
