@@ -1,0 +1,40 @@
+<header>
+  <div class="navbar navbar-dark bg-primary shadow-sm">
+    <div class="navbar-brand align-item-center d-flex">
+      <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
+    <i class="fas fa-shipping-fast" style="font-size: 40px;">&nbsp;</i>
+  
+    <strong style="font-size: 30px;">Shopee</strong>
+    <div class="form-group"  *ngIf="userDetails?.role=='User'">
+      <input type="text" class="form-control" placeholder="search Product">
+    </div>
+    <span  *ngIf="userDetails?.role=='User'" class="fa fa-search search-icon"></span>
+    </div>
+    <!-- <a class="routerclass" routerLink="/product" routerLinkActive="active">Product</a>
+    <a class="routerclass" routerLink="/cart" routerLinkActive="active">Cart</a> -->
+  <button *ngIf="userDetails?.role=='User'" [routerLink]="['/addcart',userDetails?.id]"class="btn btn-primary">
+    <i class="fas fa-cart-plus" style="font-size:30px;position: absolute;left: 80%;top: 13px;">
+      <div class="badge btn-danger">{{totalItem}}</div>
+  </i>
+  </button>
+  <div class="dropdown" style="float: right;margin-right: 40px;">
+    <button class="dropbtn">Wellcome {{userDetails?.fullname}}
+      <i class="glyphicon glyphicon-chevron-down"></i>
+    </button>
+    <div class="dropdown-content">
+      <a [routerLink]="['/profile',userDetails?.id]"><i class="glyphicon glyphicon-user"></i> View Profile</a>
+      <a routerLink="/login"><i class="glyphicon glyphicon-off"></i> Logout</a>
+    </div>
+  </div>
+
+  </div>
+  <div id="myNav" class="overlay" *ngIf="displayNav">
+    <a href="javascript:void(0)" class="closebtn" style="color: black;"(click)="closeNav()">&times;Close</a>
+    <div class="overlay-content">
+      <!-- <a class="routerclass" style="color:black" routerLink="/product" routerLinkActive="active">Product</a> -->
+  <a class="routerclass" style="color:black" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Cart</a>
+  <a class="routerclass" style="color:black" routerLink="/addcart" routerLinkActive="active">AddCart</a>
+    </div>
+  </div>
+  
+  </header>

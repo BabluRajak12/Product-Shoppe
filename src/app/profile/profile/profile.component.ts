@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
   formValue : FormGroup
   userDetails:ProfileModel
   userObj:ProfileModel = new ProfileModel()
+  path:string=''
   constructor(private route:ActivatedRoute,private api:ApiService,private formBuilder:FormBuilder
     ,private toastr:MytoasterService) { }
 
@@ -61,6 +62,12 @@ export class ProfileComponent implements OnInit {
   getUser(id:number){
     this.api.getUser(id).subscribe(res=>{
       this.userDetails = res
+      if(this.userDetails.role === 'Admin'){
+        this.path = '/productlist'
+      }
+      if(this.userDetails.role === 'User'){
+        this.path = '/cart'
+      }
     })
   }
 

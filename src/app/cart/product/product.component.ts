@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { CartService } from 'src/app/cart.service';
+import { ProfileModel } from 'src/app/profile/profile/user-model';
 
 @Component({
   selector: 'app-product',
@@ -9,10 +11,16 @@ import { CartService } from 'src/app/cart.service';
 })
 export class ProductComponent implements OnInit {
 public productList:any;
+userId:number
+userDetails:ProfileModel
 
-  constructor(private api:ApiService, private cartService: CartService) { }
+  constructor(private api:ApiService, private route: ActivatedRoute,private cartService: CartService) { }
  
   ngOnInit() {
+    this.userId = Number(this.route.snapshot.paramMap.get("id"));
+    this.api.getUser(this.userId).subscribe(res=>{
+      this.userDetails = res
+    })
     this.getCartProduct();
   }
   getCartProduct(){

@@ -31,10 +31,10 @@ export class LoginComponent implements OnInit {
         this.toastr.success("Login success!");
         this.loginForm.reset();
         if(user.role==="User"){
-          this.router.navigate(['productlist',user.id]);
+          this.router.navigate(['cart',user.id]);
         }
         if(user.role==="Admin"){
-          this.router.navigate(['signup']);
+          this.router.navigate(['productlist',user.id]);
         }
       }
       else{

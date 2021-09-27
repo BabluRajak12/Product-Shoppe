@@ -19,12 +19,6 @@
       "price": "1000"
     },
     {
-      "name": "tcnnn",
-      "description": "ctest",
-      "id": "1004",
-      "price": "1200"
-    },
-    {
       "name": "Mouse",
       "description": "ctestttt",
       "id": "1006",
@@ -93,6 +87,16 @@
       "address": "kolkata",
       "role": "User",
       "id": 8
+    },
+    {
+      "fullname": "s00977",
+      "email": "s89@gmail.com",
+      "password": "1234",
+      "mobile": 12345678,
+      "role": "Admin",
+      "designation": "Manager",
+      "address": "Kolkata",
+      "id": 9
     }
   ],
   "profile": {

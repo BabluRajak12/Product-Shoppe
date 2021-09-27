@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { ApiService } from 'src/app/api.service';
 import { CartService } from 'src/app/cart.service';
+import { ProfileModel } from 'src/app/profile/profile/user-model';
 
 @Component({
   selector: 'app-addcart',
@@ -9,7 +12,9 @@ import { CartService } from 'src/app/cart.service';
 export class AddcartComponent implements OnInit {
 public product :any =[];
 public grandTotal !:number;
-  constructor(private cartService :CartService) { }
+userId:number
+userDetails:ProfileModel
+  constructor(private cartService :CartService,private api:ApiService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.cartService.getProduct()
@@ -17,7 +22,10 @@ public grandTotal !:number;
       this.product = res;
       this.grandTotal= this.cartService.getTotalPrice()
     })
-                  
+    this.userId = Number(this.route.snapshot.paramMap.get("id"));
+    this.api.getUser(this.userId).subscribe(res=>{
+      this.userDetails = res
+    })           
  
 
 }
