@@ -9,6 +9,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HostDirective } from './host.directive'; 
 import { MytoasterService } from './mytoaster.service';
+import { ProductComponent } from './cart/product/product.component';
+import { AddcartComponent } from './cart/addcart/addcart.component';
 
 
 
@@ -16,7 +18,9 @@ import { MytoasterService } from './mytoaster.service';
   declarations: [
     AppComponent,
     ProductListComponent,
-    HostDirective
+    HostDirective,
+    ProductComponent,
+    AddcartComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,54 @@
+<ng-container *ngIf="product.length !=0">
+<div class="container">
+    <div class="card-table">
+        <div class="card-product">
+            <table class="table table-responsive" style="color: black;">
+                <thead>
+                    <tr>
+                        <th>Sr.no</th>
+                        <th>Product Name</th>
+                        <th>Product Image</th>
+                        <th>Project Description</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let item of product, let i =index">
+                        <td>{{i+1}}</td>
+                        <td>{{item.title}}</td>
+                        <td><img style="width:120px"src="{{item.image}}" alt=""></td>
+                        <td>{{item.description}}</td>
+                        <td>{{item.price}}</td>
+                        <td>{{item.quantity}}</td>
+                        <td>{{item.total}}</td>
+                  
+                       <button class="btn btn-danger" (click)="removeitem(item)">
+                           <i class="fas fa-trash"></i>
+                       </button> 
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+</ng-container>
+
+
+<ng-container *ngIf="product.length==0">
+<div class="container">
+    <div class="card">
+        <h5 class="card-title" style="color: black;">My Cart</h5>
+    </div>
+    <div class="center">
+        <img src="https://rukminim1.flixcart.com/www/800/800/promos/16/05/2019/d438a32e-765a-4d8b-b4a6-520b560971e8.png?q=90" alt="">
+        <h4 style="color: black;"> Cart is Empty</h4>
+        <h6 style="color: black;">Add Item now</h6>
+        <button routerLink="/cart"class="btn btn-primary">Shop Now</button>
+    </div>
+</div>
+</ng-container>
+
+  
