@@ -5,6 +5,7 @@ import { ProductModel } from './product-model';
 import { MytoasterService } from '../mytoaster.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { ProfileModel } from '../profile/profile/user-model';
+import { ParsedProperty } from '@angular/compiler';
 
 @Component({
   selector: 'app-product-list',

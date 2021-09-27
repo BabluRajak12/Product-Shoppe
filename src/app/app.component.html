@@ -1,9 +1,52 @@
-<nav class="navbar navbar-expand-lg"style="height:60px;width: 100vw;">
-  <!-- <p style="margin-top: 10px;">     -->
-  <!-- <a class="navbar-brand"style="color:black" href="#">Product Shopee</a> -->
+<!-- <nav class="navbar navbar-expand-lg navbar-light"style="height:60px;width: 100vw;  background-color: #0909096b;">
+  <p style="margin-top: 10px;">    
+  <a class="navbar-brand"style="color:black" href="#">Product Shopee</a>
+   <a class="routerclass" routerLink="/product" routerLinkActive="active">Product</a>
+</nav>  -->
 
-   <!-- <a class="routerclass" routerLink="/product" routerLinkActive="active">Product</a> -->
-   <!-- <button routerLink="/login" *ngIf="showLogout" style="margin-right:5px;" class="btn btn-danger mx-2">Logout</button> -->
-</nav> 
+<header>
+<div class="navbar navbar-dark bg-primary shadow-sm">
+  <div class="navbar-brand align-item-center d-flex">
+    <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
+  <i class="fas fa-shipping-fast" style="font-size: 40px;">&nbsp;</i>
 
+  <strong style="font-size: 30px;">Shopee</strong>
+  <div class="form-group">
+    <input type="text" class="form-control" placeholder="search Product">
+  </div>
+  <span class="fa fa-search search-icon"></span>
+  </div>
+  <!-- <a class="routerclass" routerLink="/product" routerLinkActive="active">Product</a>
+  <a class="routerclass" routerLink="/cart" routerLinkActive="active">Cart</a> -->
+<button routerLink="addcart"class="btn btn-primary">
+  <i class="fas fa-cart-plus" style="font-size:30px;position: absolute;left: 90%;top: 13px;">
+    <div class="badge btn-danger">{{totalItem}}</div>
+</i>
+</button>
+</div>
+<div id="myNav" class="overlay" *ngIf="displayNav">
+  <a href="javascript:void(0)" class="closebtn" style="color: black;"(click)="closeNav()">&times;Close</a>
+  <div class="overlay-content">
+    <a class="routerclass" style="color:black" routerLink="/product" routerLinkActive="active">Product</a>
+<a class="routerclass" style="color:black" routerLink="/cart" routerLinkActive="active">Cart</a>
+<a class="routerclass" style="color:black" routerLink="/addcart" routerLinkActive="active">AddCart</a>
+  </div>
+</div>
+
+</header>
 <router-outlet></router-outlet> 
+
+
+ <!-- <ul class="nav sidebar-nav">
+     <li class="sidebar-brand">
+        <a href="#">
+           Brand
+        </a>
+    </li>
+    <li>
+      <a class="routerclass" routerLink="/product" routerLinkActive="active">Product</a>
+    </li>
+    <li>
+      <a class="routerclass" routerLink="/cart" routerLinkActive="active">Cart</a>
+    </li>
+</ul>  -->

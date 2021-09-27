@@ -9,6 +9,8 @@ import {NgxPaginationModule} from 'ngx-pagination';
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 import { HostDirective } from './host.directive'; 
 import { MytoasterService } from './mytoaster.service';
+import { ProductComponent } from './cart/product/product.component';
+import { AddcartComponent } from './cart/addcart/addcart.component';
 import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile/profile.component';
@@ -20,6 +22,8 @@ import { ProfileComponent } from './profile/profile/profile.component';
     AppComponent,
     ProductListComponent,
     HostDirective,
+    ProductComponent,
+    AddcartComponent,
     LoginComponent,
     SignupComponent,
     ProfileComponent
