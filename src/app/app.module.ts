@@ -16,6 +16,7 @@ import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { HeaderComponent } from './header/header.component';
 import { PaymentComponent } from './cart/payment/payment.component';
+import { StarComponent } from './cart/star/star.component';
 
 
 
@@ -30,7 +31,8 @@ import { PaymentComponent } from './cart/payment/payment.component';
     SignupComponent,
     ProfileComponent,
     HeaderComponent,
-    PaymentComponent
+    PaymentComponent,
+    StarComponent,
   ],
   imports: [
     BrowserModule,
