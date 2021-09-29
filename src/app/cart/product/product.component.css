@@ -35,6 +35,17 @@
 }
 
 .card {
-    /* padding: 0px; */
     margin: 48px;
+}
+
+.searchtext {
+position: relative;
+top: -166px;
+left: 218px;
+}
+
+input {
+    width: 601px;
+    height: 38px;
+   
 }

@@ -11,8 +11,9 @@ import { ProfileModel } from 'src/app/profile/profile/user-model';
 })
 export class ProductComponent implements OnInit {
 public productList:any;
-userId:number
-userDetails:ProfileModel
+userId:number;
+userDetails:ProfileModel;
+public searchText : string;
 
   constructor(private api:ApiService, private route: ActivatedRoute,private cartService: CartService) { }
  

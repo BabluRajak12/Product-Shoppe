@@ -32,8 +32,13 @@
   </div>
 </div>
 <div class="container">
+  <!-- <app-header> -->
+  <div class="searchtext" >
+  <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
+</div>
+<!-- </app-header> -->
   <div class="row">
-    <ng-container *ngFor="let item of productList">
+    <ng-container *ngFor="let item of productList | filterpipe :{title: searchText, price:searchText,  description: searchText}; let i=index;">
     <div class="card col-md-3">
       <img class="imageproduct"src="{{item.image}}" alt="">
       <h5 style="white-space: nowrap;overflow: hidden; text-overflow:ellipsis;max-width: 100ch;color: black; font-weight: 900;">{{item.title}}</h5>
