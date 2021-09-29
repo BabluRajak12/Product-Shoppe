@@ -19,27 +19,17 @@ a{
     position: relative;
     top: 50%;
     transform: translateY(-50%);
-	text-align:center;
-    width:80%;
-	right:0;left:0;
-    margin:auto;
-    height:450px;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+    height: 269px;
     background-color: hsla(205, 46%, 30%, 1);
-    margin-top: 340px;
+    margin-top: 340px;;
 }
 .white-panel{
-    background: hsla(205, 46%, 30%, 1);
-    background: linear-gradient(
-        90deg, hsl(25deg 57% 73%) 0%, hsl(28deg 88% 56%)100%);
-    height:500px;
-    position:absolute;
-    top:-30px;
-    width:50%;
-    right:calc(50% - 50px);
-    transition:.3s ease-in-out;
-    z-index:0;
-    box-shadow: 0 0 15px 9px #00000096;
-    border: none;
+  position: relative;
+  bottom: 30%;
+   
 }
 .login-reg-panel input[type="radio"]{
     position:relative;
@@ -70,9 +60,9 @@ a{
 }
 .register-info-box{
     padding:0 50px;
-    top:20%;
     right:0;
     position:absolute;
+    bottom: 40px;
     
 }
 .right-log{right:50px !important;}
@@ -161,17 +151,15 @@ a{
 .container{
     color:white;
     margin-top: 120px;
-    /* background-color: rgb(188, 193, 197); */
 } 
 .card{
-    /* background-color: rgb(188, 193, 197); */
-    /* margin-top: 10px; */
+ 
     padding: 40px;
     border: none;
-    width: 500px;
+    width: 425px;
     position: absolute;
     top: 50%;
-    left: 50%;
+    left: 32%;
     transform: translate(-50, -50);
     background: hsla(205, 46%, 30%, 1);
     background: linear-gradient(

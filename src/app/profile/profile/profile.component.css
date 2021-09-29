@@ -31,8 +31,12 @@ body {
 }
 
 .bg-c-lite-green {
-    background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
-    background: linear-gradient(to right, #ee5a6f, #f29263)
+    /* background: -webkit-gradient(linear, left top, right top, from(#f29263), to(#ee5a6f));
+    background: linear-gradient(to right, #ee5a6f, #f29263) */
+    background: #878181;
+    width: 283px !important;
+    height: 283px !important;
+    border-radius: 283px !important;
 }
 
 .user-profile {
@@ -40,7 +44,8 @@ body {
 }
 
 .card-block {
-    padding: 1.25rem
+    padding: 1.25rem;
+    color:black;
 }
 
 .m-b-25 {
@@ -90,7 +95,8 @@ h6 {
 }
 
 .text-muted {
-    color: #d1d4d7  !important
+    /* color: #d1d4d7  !important */
+    color:#044280 !important;
 }
 
 .b-b-default {
@@ -132,10 +138,15 @@ h6 {
     transition: all 0.3s ease-in-out
 }
 .profileEdit{
-    background-color: #526ceb;
+    /* background-color: #526ceb;
     border-radius: 5px;
-    margin-left: 10px;
+    margin-left: 10px; */
+    background-color: #878181;
+    border-radius: 61px;
+    /* margin-left: 10px; */
+    margin-top: 0px;
 }
+
 .closeBtn{
     margin-left: 10px;
     border-radius: 5px;
