@@ -17,6 +17,7 @@ import { ProfileComponent } from './profile/profile/profile.component';
 import { HeaderComponent } from './header/header.component';
 import { PaymentComponent } from './cart/payment/payment.component';
 import { FilterpipePipe } from './filterpipe.pipe';
+import { StarComponent } from './cart/star/star.component';
 
 
 
@@ -32,7 +33,8 @@ import { FilterpipePipe } from './filterpipe.pipe';
     ProfileComponent,
     HeaderComponent,
     PaymentComponent,
-    FilterpipePipe
+    FilterpipePipe,
+    StarComponent
   ],
   imports: [
     BrowserModule,

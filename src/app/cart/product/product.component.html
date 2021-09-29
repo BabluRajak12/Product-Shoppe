@@ -43,8 +43,9 @@
       <img class="imageproduct"src="{{item.image}}" alt="">
       <h5 style="white-space: nowrap;overflow: hidden; text-overflow:ellipsis;max-width: 100ch;color: black; font-weight: 900;">{{item.title}}</h5>
       <h5 style="white-space: nowrap;overflow: hidden; text-overflow:ellipsis;max-width: 100ch;color: black;">{{item.description}}</h5>
+      <app-star [rating]='item.rating.rate'></app-star>
       <p style="color: black;"><strong>Price:</strong>{{item.price | currency}}</p>
-<button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button>
+      <button class="btn btn-primary" (click)="addtocart(item)">Add to cart</button>
     </div>
   </ng-container>
   </div>
