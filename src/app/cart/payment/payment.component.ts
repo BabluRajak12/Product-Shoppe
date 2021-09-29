@@ -8,10 +8,13 @@ import { MytoasterService } from 'src/app/mytoaster.service';
   styleUrls: ['./payment.component.css']
 })
 export class PaymentComponent implements OnInit {
+  backBtn!: boolean;
+  proceedBtn!: boolean;
+  click: any;
+  back: boolean;
   constructor(private toastr :MytoasterService) { }
 
   ngOnInit() {
-  
   }
   goBack() {
     window.history.back();
@@ -20,5 +23,10 @@ export class PaymentComponent implements OnInit {
   proceed() {
     this.toastr.success("Transaction sucessful");
     alert("While proceed do not refresh or press back button")
+    if(this.proceed){
+      this.proceedBtn = true;
+      this.backBtn = true;
+    }
+        
   }
 }

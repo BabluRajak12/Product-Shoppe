@@ -22,8 +22,8 @@
   <div><label class="cardlabel">CVV </label></div>
   <input type="text" placeholder="CVV" value="" style="width: 434px;">
   <div class="proceedback">
-    <button (click)="goBack()" class="btn btn-primary">Back</button> &nbsp;
-    <button (click)="proceed()"class="btn btn-primary">Proceed</button>
+    <button (click)="goBack()" [disabled]="backBtn" class="btn btn-primary">Back</button> &nbsp;
+    <button (click)="proceed()" [disabled]="proceedBtn" class="btn btn-primary">Proceed</button>
     </div>
 </div>
   
