@@ -1,4 +1,4 @@
-<app-header [userDetails]="userDetails"></app-header>
+<app-header [userDetails]="userDetails" (searchOn)="onInputChangeData($event)"></app-header>
 <div class="card-top container-fluid">
   <div class="comntainer d-flex" style="display: flex;">
     <div class="item">
@@ -34,9 +34,9 @@
 </div>
 <div class="container">
   <!-- <app-header> -->
-  <div class="searchtext" >
+  <!-- <div class="searchtext" >
   <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
-</div>
+</div> -->
 <!-- </app-header> -->
   <div class="row">
     <ng-container *ngFor="let item of productList | filterpipe :{title: searchText, price:searchText,  description: searchText}; let i=index;">

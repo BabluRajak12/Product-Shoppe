@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { CartService } from '../cart.service';
 import { ProfileModel } from '../profile/profile/user-model';
 
@@ -10,6 +10,8 @@ import { ProfileModel } from '../profile/profile/user-model';
 export class HeaderComponent implements OnInit {
   title = 'product-shopee';
   displayNav: boolean = false; 
+  searchText:string=''
+  @Output() searchOn = new EventEmitter<string>()
   public totalItem : number  =0;
   @Input() userDetails : ProfileModel
   constructor(private cartservice:CartService) { }
@@ -26,5 +28,9 @@ this.totalItem=res.length;
     
      closeNav() {
       this.displayNav = false;
+     }
+
+     inputChange(value:string){
+      this.searchOn.emit(value)
      }
 }

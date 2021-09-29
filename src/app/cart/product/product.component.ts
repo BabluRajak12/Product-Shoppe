@@ -53,4 +53,7 @@ this.cartService.addToCart(item);
     this.productList= this.productList.filter(p=>p.type===filterString)
    }
   }
+  onInputChangeData(data){
+    this.searchText = data;
+  }
 }
