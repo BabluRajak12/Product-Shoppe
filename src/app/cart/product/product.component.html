@@ -2,24 +2,25 @@
 <div class="card-top container-fluid">
   <div class="comntainer d-flex" style="display: flex;">
     <div class="item">
-      <a>
+      <a (click)="filterProducts('all')">
         <img class="imgclass" src="https://rukminim1.flixcart.com/flap/128/128/image/f15c02bfeb02d15d.png?q=100" alt="">
         <h6 class="itemheader">All products</h6>
       </a>
     </div>
     <div class="item">
-      <a>
+      <a (click)="filterProducts('electronics')">
         <img class="imgclass" src="https://rukminim1.flixcart.com/flap/128/128/image/69c6589653afdb9a.png?q=100" alt="">
         <h6 class="itemheader">Electronics</h6>
       </a>
     </div>
     <div class="item">
-      <a>
+      <a (click)="filterProducts('fashion')">
         <img class="imgclass"src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
         <h6 class="itemheader">Fashion</h6>
       </a>
     </div>
     <div class="item">
+      <a (click)="filterProducts('jewelery')">
       <img  style="width: 56px;
       position: relative;
       left: 15px;
@@ -27,7 +28,7 @@
       <h6 class="" style="position: relative;
       top: 11px;
       text-indent: 14px;
-      color: black;">Jewllery</h6>
+      color: black;">Jewllery</h6></a>
     </div>
   </div>
 </div>

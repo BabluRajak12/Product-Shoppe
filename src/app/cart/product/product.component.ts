@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ApiService } from 'src/app/api.service';
 import { CartService } from 'src/app/cart.service';
 import { ProfileModel } from 'src/app/profile/profile/user-model';
+import { ProductCartModel } from './product-cart.model';
 
 @Component({
   selector: 'app-product',
@@ -10,7 +11,8 @@ import { ProfileModel } from 'src/app/profile/profile/user-model';
   styleUrls: ['./product.component.css']
 })
 export class ProductComponent implements OnInit {
-public productList:any;
+  public productList:ProductCartModel[]=[];
+  public tempProductList:ProductCartModel[]=[];
 userId:number;
 userDetails:ProfileModel;
 public searchText : string;
@@ -28,6 +30,7 @@ public searchText : string;
     this.api.getcartProduct()
     .subscribe(res =>{
    this.productList=res;
+   this.tempProductList=[...this.productList]
    this.productList.forEach((a:any) => {
      Object.assign(a,{quantity:1,total:a.price});
    });
@@ -39,5 +42,15 @@ this.cartService.addToCart(item);
 // if(id==item){
 //   let counter= item+1;
 // }
+  }
+  filterProducts(filterString:string){
+    
+   if(filterString === 'all'){
+     this.productList = this.tempProductList
+   }
+   else{
+    this.productList = this.tempProductList
+    this.productList= this.productList.filter(p=>p.type===filterString)
+   }
   }
 }
