@@ -15,6 +15,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { ProfileComponent } from './profile/profile/profile.component';
 import { HeaderComponent } from './header/header.component';
+import { PaymentComponent } from './cart/payment/payment.component';
 
 
 
@@ -28,7 +29,8 @@ import { HeaderComponent } from './header/header.component';
     LoginComponent,
     SignupComponent,
     ProfileComponent,
-    HeaderComponent
+    HeaderComponent,
+    PaymentComponent
   ],
   imports: [
     BrowserModule,

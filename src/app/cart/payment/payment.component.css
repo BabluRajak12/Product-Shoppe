@@ -1,0 +1,66 @@
+.img {
+    width: 70px;
+    height: 70px;
+    border: 1px solid black;
+    margin: 10px;
+    position: relative;
+    left: 19%;
+    top: 60px;
+}
+.imgScanner {
+    width: 137px;
+    height: 122px;
+    position: relative;
+    left: 87%;
+    top: 21px;
+}
+.styleblack {
+    color: black;
+}
+.form {
+color: black;
+    border: 1px solid black;
+    text-align: center;
+    position: relative;
+    top: 67px;
+    padding-top: 12px;
+    width: 50%;
+    left: 22%;
+    padding-bottom: 20px;
+    background-color: #dee6ed;
+}
+
+
+.cardlabel {
+    font-size: 16px;
+    color:#5e5ee5;
+}
+.cardlabelDetails {
+    font-size: 16px;
+    position: relative;
+    margin-right: 67%;
+
+}
+.container-fluid {
+    background-color: #e7e4df;
+    height: 100vh;
+}
+.cardimage {
+    position: relative;
+    left: 222%;
+    top: -23px;
+    width: 81px;
+    height: 27px;
+}
+.imgUPI {
+    width: 80px;
+    height: 34px;
+    position: relative;
+    left: 78%;
+    top: 110px;
+}
+
+.proceedback {
+    top: 70px;
+    position: relative;
+}

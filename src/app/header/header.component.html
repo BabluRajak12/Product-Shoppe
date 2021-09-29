@@ -33,7 +33,7 @@
     <div class="overlay-content">
       <!-- <a class="routerclass" style="color:black" routerLink="/product" routerLinkActive="active">Product</a> -->
   <a class="routerclass" style="color:black" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Cart</a>
-  <a class="routerclass" style="color:black" routerLink="/addcart" routerLinkActive="active">AddCart</a>
+  <a class="routerclass" style="color:black" [routerLink]="['/addcart',userDetails?.id]" routerLinkActive="active">AddCart</a>
     </div>
   </div>
   
