@@ -16,28 +16,27 @@
     <div class="item">
       <a (click)="filterProducts('fashion')">
         <img class="imgclass"src="https://rukminim1.flixcart.com/flap/128/128/image/82b3ca5fb2301045.png?q=100" alt="">
-        <h6 class="itemheader">Fashion</h6>
+        <h6 href=""class="itemheader">Fashion</h6>
       </a>
     </div>
     <div class="item">
       <a (click)="filterProducts('jewelery')">
-      <img  style="width: 56px;
-      position: relative;
-      left: 15px;
+      <img  style="width: 56px; position: relative;left: 15px;
       top: 2px;" src="https://rukminim1.flixcart.com/image/580/696/kkh6zrk0/jewellery-set/o/w/z/gt-ns-862-matushri-art-original-imafzt9teacakjyn.jpeg?q=50" alt="">
-      <h6 class="" style="position: relative;
-      top: 11px;
-      text-indent: 14px;
-      color: black;">Jewllery</h6></a>
+      <h6 class="" style="position: relative;top: 11px;text-indent: 14px;color: #0b48f8; cursor: pointer;">
+        Jewllery</h6></a>
     </div>
+  
+     
+        <marquee width="430px" direction="up" height="100px">
+          <span> <img class="img" src="/assets/Images/mega.PNG" alt=""> </span>
+          </marquee>
+          <span> <img class="discount" src="/assets/Images/discount.jpg" alt=""></span>
+          <span> <img class="imghurry" src="/assets/Images/hurry.jpg" alt=""></span>
   </div>
 </div>
 <div class="container">
-  <!-- <app-header> -->
-  <!-- <div class="searchtext" >
-  <input [(ngModel)]="searchText" placeholder="Search.." class="advancedSearchTextbox">
-</div> -->
-<!-- </app-header> -->
+  
   <div class="row">
     <ng-container *ngFor="let item of productList | filterpipe :{title: searchText, price:searchText,  description: searchText}; let i=index;">
     <div class="card col-md-3">

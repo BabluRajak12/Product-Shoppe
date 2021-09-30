@@ -11,10 +11,13 @@
     top: -20px;
 }
 .itemheader {
-    color:black;
+    color:#0b48f8;
     text-align: center;
+    cursor: pointer;
     /* text-indent: 32px; */
 }
+
+
 .imgclass {
     width: 64px;
     margin-left: 21px;
@@ -49,3 +52,29 @@ input {
     height: 38px;
    
 }
+
+.img {
+    height: 200px;
+    width: 500px;
+    animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+@keyframes blinker {  
+    from { opacity: 1; }
+    to { opacity: 0; }
+  }
+
+  .imghurry {
+    height: 110px;
+    width: 300px;
+    position: relative;
+    left: 21px;
+    animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+.discount {
+    height: 110px;
+    width: 179px;
+    position: relative;
+    left: 30px;
+    animation: blinker 0.5s cubic-bezier(.5, 0, 1, 1) infinite alternate;  
+}
+  
