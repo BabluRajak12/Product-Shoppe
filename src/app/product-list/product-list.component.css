@@ -31,11 +31,12 @@ color: black;
 }
 
 .btn {
-    border: 1px solid black;
+    /* //border: 1px solid black; */
     color:black;
     height: 50%;
     margin-left: 5px;
    border-radius: 5px;
+   font-size: 9px;
 }
 
 .form-control {

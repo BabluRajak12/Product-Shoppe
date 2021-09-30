@@ -33,8 +33,8 @@
     <a href="javascript:void(0)" class="closebtn" style="color: black;"(click)="closeNav()">&times;Close</a>
     <div class="overlay-content">
       <!-- <a class="routerclass" style="color:black" routerLink="/product" routerLinkActive="active">Product</a> -->
-  <a class="routerclass" style="color:black" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Cart</a>
-  <a class="routerclass" style="color:black" [routerLink]="['/addcart',userDetails?.id]" routerLinkActive="active">AddCart</a>
+  <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Cart</a>
+  <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" [routerLink]="['/addcart',userDetails?.id]" routerLinkActive="active">AddCart</a>
     </div>
   </div>
   

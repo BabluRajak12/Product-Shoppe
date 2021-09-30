@@ -18,7 +18,7 @@ export class ProductListComponent implements OnInit {
   _editProduct = "Edit Product"
   productmodelObj: ProductModel = new ProductModel();
   formvalue: FormGroup;
-  productData !: any;
+  productData : ProductModel[]=[];
   showupdate !: boolean;
   showadd !: boolean;
   submitted = false;
@@ -30,8 +30,8 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit() {
     this.formvalue = this.formbuilder.group({
-      id:['',[Validators.required,Validators.maxLength(4)]],
-      name: ['', [Validators.required, Validators.pattern(/^[A-Z]/)]],
+     // id:['',[Validators.required,Validators.maxLength(4)]],
+      title: ['', [Validators.required, Validators.pattern(/^[A-Z]/)]],
       description: ['', Validators.required],
       price: ['', Validators.required],
     })
@@ -51,8 +51,8 @@ export class ProductListComponent implements OnInit {
     }
     else{
       
-      this.productmodelObj.id = this.formvalue.value.id;
-      this.productmodelObj.name = this.formvalue.value.name;
+      //this.productmodelObj.id = this.formvalue.value.id;
+      this.productmodelObj.title = this.formvalue.value.name;
       this.productmodelObj.description = this.formvalue.value.description;
       this.productmodelObj.price = this.formvalue.value.price;
       this.api.postProduct(this.productmodelObj)
@@ -95,10 +95,10 @@ export class ProductListComponent implements OnInit {
   onEdit(row: any) {
     this.showupdate = true;
     this.showadd = false;
-    (<HTMLInputElement>document.getElementById("exampleInputid")).disabled= true;
-    this.productmodelObj.id = row.id;
-    this.formvalue.controls['id'].setValue(row.id);
-    this.formvalue.controls['name'].setValue(row.name);
+   // (<HTMLInputElement>document.getElementById("exampleInputid")).disabled= true;
+   // this.productmodelObj.id = row.id;
+    //this.formvalue.controls['id'].setValue(row.id);
+    this.formvalue.controls['title'].setValue(row.title);
     this.formvalue.controls['description'].setValue(row.description);
     this.formvalue.controls['price'].setValue(row.price);
     this.formTitle = this._editProduct;
@@ -110,8 +110,8 @@ export class ProductListComponent implements OnInit {
       return;
     }
     else{
-    this.productmodelObj.id =this.formvalue.value.id;
-    this.productmodelObj.name = this.formvalue.value.name;
+    //this.productmodelObj.id =this.formvalue.value.id;
+    this.productmodelObj.title = this.formvalue.value.name;
     this.productmodelObj.description = this.formvalue.value.description;
     this.productmodelObj.price = this.formvalue.value.price;
     this.api.updateProduct(this.productmodelObj, this.productmodelObj.id)

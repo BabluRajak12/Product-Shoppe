@@ -16,7 +16,7 @@ return res;
 }))
   }
   getProduct():Observable<any>{
-    return this.http.get<any>("http://localhost:3000/posts")
+    return this.http.get<any>("http://localhost:3000/products")
 .pipe(map((res:any)=>{
 return res;
 }))
