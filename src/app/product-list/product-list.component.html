@@ -2,7 +2,7 @@
   <app-header [userDetails]="userDetails"></app-header>
   </nav> 
  
-<div class="container">
+<div class="container" style="background-color: #d1b9b9">
   <h1 class="titleheader">
     Welcome to Product Application !</h1>
     <h1 class="titleheaderr">
@@ -12,24 +12,32 @@
 <table class="table mt-3">
   <thead class="tablehead">
     <tr style="background-color: white;">
-      <th style="width:35%; text-align:center;font-size: larger;">Id</th>
+      <!-- <th style="width:35%; text-align:center;font-size: larger;">Id</th> -->
+      <th style="text-align:center;">#Id</th>
+      <th class="tableheadth" >Image</th>
       <th class="tableheadth" >Name</th>
       <th class="tableheadth">Description</th>
+      <th class="tableheadth">Type</th>
+      <th class="tableheadth">Category</th>
       <th class="tableheadth" >Price</th>
-      <th></th>
+      <th style="width:30%;"></th>
     </tr>
   </thead>
   <tbody class="tablebody">
     <tr *ngFor="let row of productData | filter:filter| paginate: { itemsPerPage:5, currentPage: p }"  appHost>
       <td class="rowpading">{{row.id}}</td>
-      <td class="rowpading">{{row.name | titlecase}}</td>
+      <td class="rowpading">
+        <img height="50px" width="50px" [src]='row.image' [title]='row.title'> </td>
+      <td class="rowpading">{{row.title | titlecase}}</td>
       <td class="rowpading" title="{{row.description}}">
         {{(row.description.length>20)? (row.description| titlecase | slice:0:20)+'..':(row.description | titlecase)}}
       </td>
+      <td class="rowpading">{{row.type | titlecase}}</td>
+      <td class="rowpading">{{row.category}}</td>
       <td class="rowpading">{{row.price | currency:'INR'}}</td>
       <td>
-        <button (click)="onEdit(row)" class="btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal">Edit</button>
-        <button (click)="deleteProduct(row)" class="btn btn-danger mx-3">Delete</button>
+        <button (click)="onEdit(row)" class="btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal"><i class="glyphicon glyphicon-pencil"></i></button>
+        <button (click)="deleteProduct(row)" class="btn btn-danger mx-3"><i class="glyphicon glyphicon-trash"></i></button>
       </td>  
     </tr>
   </tbody>
@@ -55,7 +63,7 @@
       <div class="modal-body" style="background-color: white;color:black;">
         <form [formGroup]='formvalue' (ngSubmit)="onSubmit()">
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <label for="exampleInputid" style="margin-left: 47px;">ID:</label>
            <input type="text" formControlName="id"  class="form-control" id="exampleInputid" 
            placeholder="ID" [ngClass]="{ 'is-invalid': submitted && f.id.errors }" />
@@ -64,15 +72,15 @@
               <div *ngIf="f.id.errors.maxlength" class="error"> Maximum length allowed 4</div>
               
           </div>
-          </div>
+          </div> -->
 
           <div class="form-group">
             <label for="exampleInputname" class="labelclassName">Name:</label>
-           <input type="text"  formControlName="name"  class="form-control" id="exampleInputname" 
-           placeholder="name" [ngClass]="{ 'is-invalid': submitted && f.name.errors }" />
-            <div *ngIf="submitted && f.name.errors" class="invalid-feedback">
-              <div *ngIf="f.name.errors.required" class="error"> Name is required</div>
-              <div *ngIf="f.name.errors.pattern" class="error"> Name Should start with capital letter</div>
+           <input type="text"  formControlName="title"  class="form-control" id="exampleInputname" 
+           placeholder="name" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+              <div *ngIf="f.title.errors.required" class="error"> Name is required</div>
+              <div *ngIf="f.title.errors.pattern" class="error"> Name Should start with capital letter</div>
           </div>
           </div>
 
