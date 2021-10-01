@@ -43,7 +43,7 @@
         {{(row.description.length>20)? (row.description| titlecase | slice:0:20)+'..':(row.description | titlecase)}}
       </td>
       <td class="rowpading">{{row.type | titlecase}}</td>
-      <td class="rowpading">{{row.category}}</td>
+      <td class="rowpading">{{row.category | titlecase}}</td>
       <td class="rowpading">{{row.price | currency:'INR'}}</td>
       <td>
         <button (click)="onEdit(row)" class="btn btn-info" type="button" data-toggle="modal" data-target="#exampleModal"><i class="glyphicon glyphicon-pencil"></i></button>
@@ -63,14 +63,14 @@
 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
-      <div class="modal-header"style="background-color: white; color:black;">
+      <div class="modal-header"style="background-color: #d6ccc1; color:black;">
         <!-- <h5 class="modal-title" style="background-color: white;">Add New Product </h5> -->
-        <h5 class="modal-title" style="background-color: white;">{{formTitle}} </h5>
+        <h5 class="modal-title" style="background-color: #d6ccc1;">{{formTitle}} </h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
       </div>
-      <div class="modal-body" style="background-color: white;color:black;">
+      <div class="modal-body" style="background-color: #fac87e;color:black;">
         <form [formGroup]='formvalue' (ngSubmit)="onSubmit()">
 
           <!-- <div class="form-group">
@@ -83,34 +83,112 @@
               
           </div>
           </div> -->
-
-          <div class="form-group">
-            <label for="exampleInputname" class="labelclassName">Name:</label>
-           <input type="text"  formControlName="title"  class="form-control" id="exampleInputname" 
-           placeholder="name" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
-            <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
-              <div *ngIf="f.title.errors.required" class="error"> Name is required</div>
-              <div *ngIf="f.title.errors.pattern" class="error"> Name Should start with capital letter</div>
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right"> 
+            <label for="exampleInputname" class="labelclassName">Product Image:</label>
+            </div>
+            <div class="col-md-8"> 
+              <input type="file"  formControlName="image"  class="form-control" id="file"
+              (change)="onFileUpload($event)"/>
+              <div *ngIf="submitted && f.image.errors" class="invalid-feedback">
+                <div *ngIf="f.image.errors.required" class="error"> File is required</div>
+              </div>
+            </div>
           </div>
+          
+          <div *ngIf="imagePreview" class="form-group row">
+              <div style="margin-left: 160px">
+                <img [src]="imagePreview" height="80px" width="80px">
+              </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right"> 
+            <label for="exampleInputname" class="labelclassName">Product Name:</label>
+            </div>
+            <div class="col-md-8"> 
+              <input type="text"  formControlName="title"  class="form-control" id="exampleInputname" 
+              placeholder="name" [ngClass]="{ 'is-invalid': submitted && f.title.errors }" />
+              <div *ngIf="submitted && f.title.errors" class="invalid-feedback">
+                <div *ngIf="f.title.errors.required" class="error"> Name is required</div>
+                <div *ngIf="f.title.errors.pattern" class="error"> Name Should start with capital letter</div>
+              </div>
+            </div>
           </div>
 
           
-          <div class="form-group">
-            <label for="exampleInputdescription" class="labelclass">Description:</label>
-            <input type="text" formControlName="description" class="form-control" id="exampleInputdescription" 
-            placeholder="description" [ngClass]="{'is-invalid':submitted && f.description.errors}">
-            <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
-              <div *ngIf="f.description.errors.required" class="error"> Description is required</div>
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right"> 
+            <label for="exampleInputdescription" class="labelclass">Product Description:</label>
+            </div>
+            <div class="col-md-8"> 
+              <textarea rows="3" formControlName="description" class="form-control" id="exampleInputdescription" 
+              placeholder="description" [ngClass]="{'is-invalid':submitted && f.description.errors}"></textarea>
+              <div *ngIf="submitted && f.description.errors" class="invalid-feedback">
+                <div *ngIf="f.description.errors.required" class="error"> Description is required</div>
+                <!-- <div *ngIf="f.description.errors.maxlength" class="error"> Maximum length allowed 100</div> -->
+            </div>
+          </div>
+          </div>
+          
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right">
+            <label for="exampleInputdescription" class="labelclass">Select Type:</label>
+            </div>
+            <div class="col-md-8">
+              <select formControlName="type" class="form-control">
+                <option disabled>Select</option>
+                <option>electronics</option>
+                <option>jewelery</option>
+                <option>fashion</option>
+            </select>
+              <div *ngIf="submitted && f.type.errors" class="invalid-feedback">
+                <div *ngIf="f.type.errors.required" class="error"> Type is required</div>
+            </div>
           </div>
           </div>
 
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right">
+            <label for="exampleInputdescription" class="labelclass">Select Category:</label>
+            </div>
+            <div class="col-md-8">
+              <select formControlName="category" class="form-control">
+                <option disabled>Select</option>
+                <option>men's clothing</option>
+                <option>women's clothing</option>
+                <option>jewelery</option>
+                <option>electronics</option>
+            </select>
+              <div *ngIf="submitted && f.category.errors" class="invalid-feedback">
+                <div *ngIf="f.category.errors.required" class="error"> Category is required</div>
+            </div>
+          </div>
+          </div>
 
-          <div class="form-group">
-            <label for="exampleInputPrice" class="labelclassPrice">Price:</label>
-            <input type="number" formControlName="price" class="form-control" id="exampleInputPrice"
-             placeholder="price" [ngClass]="{'is-invalid':submitted && f.price.errors}">
-             <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
-              <div *ngIf="f.price.errors.required" class="error">Price is required</div>
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right">
+            <label for="exampleInputPrice" class="labelclassPrice">Product Rating:</label>
+            </div>
+            <div class="col-md-8">
+              <input type="number" formControlName="rating" class="form-control" id="exampleInputPrice"
+              placeholder="rating" [ngClass]="{'is-invalid':submitted && f.rating.errors}">
+              <div *ngIf="submitted && f.rating.errors" class="invalid-feedback">
+                <div *ngIf="f.rating.errors.required" class="error">Rating is required</div>
+            </div>
+          </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-md-4" style="text-align: right">
+            <label for="exampleInputPrice" class="labelclassPrice">Product Price:</label>
+            </div>
+            <div class="col-md-8">
+              <input type="number" formControlName="price" class="form-control" id="exampleInputPrice"
+              placeholder="price" [ngClass]="{'is-invalid':submitted && f.price.errors}">
+              <div *ngIf="submitted && f.price.errors" class="invalid-feedback">
+                <div *ngIf="f.price.errors.required" class="error">Price is required</div>
+            </div>
           </div>
           </div>
 

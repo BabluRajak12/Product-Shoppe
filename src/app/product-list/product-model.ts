@@ -10,9 +10,6 @@ export class ProductModel {
     description: string;
     type:string;
     category: string;
-    image: string;
-    rating: {
-      rate: number,
-      count: number
-    }
+    image: string | ArrayBuffer;
+    rating: number
 }
