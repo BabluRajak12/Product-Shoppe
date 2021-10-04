@@ -35,6 +35,7 @@ export class PaymentComponent implements OnInit {
     if(this.proceed){
       this.proceedBtn = true;
       this.backBtn = true;
+      this.formvalue.reset();
     }
         
   }
