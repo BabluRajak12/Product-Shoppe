@@ -11,6 +11,47 @@
       "description": "ctesthhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh",
       "price": 1000,
       "id": 2
+    },
+    {
+      "description": "Use to Bake food",
+      "price": 20,
+      "id": 3
+    },
+    {
+      "description": "Use to Bake food",
+      "price": 23.45,
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "description": "Use to Bake food",
+      "price": 7.88,
+      "id": 7
+    },
+    {
+      "description": "Use to Bake food",
+      "price": 7.88,
+      "id": 8
+    },
+    {
+      "description": "Used to eat food",
+      "price": 78,
+      "id": 9
+    },
+    {
+      "description": "Used to eat food",
+      "price": 78,
+      "id": 10
+    },
+    {
+      "description": "Cut vegetables",
+      "price": 7.88,
+      "id": 11
     }
   ],
   "signupUsers": [
@@ -85,6 +126,26 @@
       "designation": "Manager",
       "address": "Kolkata",
       "id": 9
+    },
+    {
+      "fullname": "Bablu",
+      "email": "bab@gmail.com",
+      "password": "1234",
+      "mobile": 1234567890,
+      "role": "User",
+      "designation": "consultant",
+      "address": "Jamshedpur",
+      "id": 10
+    },
+    {
+      "fullname": "bablu",
+      "email": "babl@gmail.com",
+      "password": "1234",
+      "mobile": 345672987,
+      "role": "Admin",
+      "designation": "consultant",
+      "address": "Jamshedpur",
+      "id": 11
     }
   ],
   "products": [

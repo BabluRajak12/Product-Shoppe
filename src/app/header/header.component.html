@@ -4,7 +4,7 @@
       <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
     <i class="fas fa-shipping-fast" style="font-size: 40px;">&nbsp;</i>
   
-    <strong style="font-size: 30px;">Shopee</strong>
+    <strong style="font-size: 30px;"[routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Shopee</strong>
     <div class="form-group"  *ngIf="userDetails?.role=='User'">
       <input [(ngModel)]="searchText" (ngModelChange)="inputChange(searchText)" type="text" class="form-control" placeholder="search Product">
     
@@ -35,7 +35,8 @@
       <!-- <a class="routerclass" style="color:black" routerLink="/product" routerLinkActive="active">Product</a> -->
   <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Cart</a>
   <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" [routerLink]="['/addcart',userDetails?.id]" routerLinkActive="active">AddCart</a>
-    </div>
+  <a class="routerclass" *ngIf="userDetails?.role=='User'" routerLink="/file" style="color:black"  routerLinkActive="active">file</a>
+</div>
   </div>
   
   </header>
