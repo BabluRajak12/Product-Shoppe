@@ -18,6 +18,7 @@ import { HeaderComponent } from './header/header.component';
 import { PaymentComponent } from './cart/payment/payment.component';
 import { FilterpipePipe } from './filterpipe.pipe';
 import { StarComponent } from './cart/star/star.component';
+import { PaymentCardDirective } from './payment-card.directive';
 
 
 
@@ -34,7 +35,8 @@ import { StarComponent } from './cart/star/star.component';
     HeaderComponent,
     PaymentComponent,
     FilterpipePipe,
-    StarComponent
+    StarComponent,
+    PaymentCardDirective
   ],
   imports: [
     BrowserModule,

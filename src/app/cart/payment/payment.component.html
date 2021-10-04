@@ -6,27 +6,47 @@
 <span> <img class="img" src="/assets/Images/phonepay.png" alt=""></span>
 <span> <img class="img" src="/assets/Images/Paytm.jpg" alt=""></span>
 </div>
-<div class="form">
+<form [formGroup]='formvalue' ngSubmit="onSubmit()">
+  <div class="form">
   <div>
     <label class="cardlabelDetails"> Enter Card Details
      <img src="/assets/Images/visa.png" class="cardimage">
     </label>
   <div><label class="cardlabel">Card Number </label></div>
-  <input type="text" placeholder="Card No" value=""style="width: 434px;"></div>
+  <input formControlName="cardNo" type="text" placeholder="Card No" value=""style="width: 434px;" appPaymentCard></div>
+
+  <div *ngIf="formvalue.controls.cardNo.invalid && formvalue.controls.cardNo.touched" class="invalid-feedback"> 
+    <div *ngIf="f.cardNo.errors.required" class="error">Card number must be 16 digits</div>
+  </div>
   <div>
   <div><label class="cardlabel">Expiry Date </label></div>
-  <input type="text" placeholder="Expiry Date" value=""style="width: 434px;"></div>
+  <input formControlName="ExpireDate" type="text" placeholder="MM / YY" value=""style="width: 434px;"></div>
+  
+  <div *ngIf="formvalue.controls.ExpireDate.invalid && formvalue.controls.ExpireDate.touched" class="invalid-feedback"> 
+    <div *ngIf="f.ExpireDate.errors.required" class="error">Expiry date is required</div>
+  </div>
+
   <div>
   <div><label class="cardlabel">Cardholder Name </label></div>
-  <input type="text" placeholder="Cardholder Name" value="" style="width: 434px;"></div>
+  <input formControlName="cardHoldername" type="text" placeholder="Cardholder Name" value="" style="width: 434px;"></div>
+  
+  <div *ngIf="formvalue.controls.cardHoldername.invalid && formvalue.controls.cardHoldername.touched" class="invalid-feedback"> 
+    <div *ngIf="f.cardHoldername.errors.required" class="error">Card holder name is required</div>
+  </div>
+
   <div><label class="cardlabel">CVV </label></div>
-  <input type="text" placeholder="CVV" value="" style="width: 434px;">
+  <input formControlName="cvv" type="text" placeholder="CVV" maxlength="3" style="width: 434px;">
+  
+  <div *ngIf="formvalue.controls.cvv.invalid && formvalue.controls.cvv.touched" class="invalid-feedback"> 
+    <div *ngIf="f.cvv.errors.required" class="error">CVV is required</div>
+  </div>
+
   <div class="proceedback">
     <button (click)="goBack()" [disabled]="backBtn" class="btn btn-primary">Back</button> &nbsp;
-    <button (click)="proceed()" [disabled]="proceedBtn" class="btn btn-primary">Proceed</button>
+    <button (click)="proceed()" [disabled]="formvalue.invalid || proceedBtn" class="btn btn-primary">Proceed</button>
     </div>
 </div>
-  
+</form>  
 </div>
 
 <div>

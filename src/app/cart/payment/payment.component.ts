@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MytoasterService } from 'src/app/mytoaster.service';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 
 @Component({
@@ -12,9 +13,17 @@ export class PaymentComponent implements OnInit {
   proceedBtn!: boolean;
   click: any;
   back: boolean;
-  constructor(private toastr :MytoasterService) { }
+  formvalue: FormGroup;
+  submitted: boolean = false;
+  constructor(private toastr :MytoasterService, private formbuilder: FormBuilder) { }
 
   ngOnInit() {
+    this.formvalue = this.formbuilder.group({
+      cardNo: ['', Validators.required],
+      ExpireDate: ['', Validators.required],
+      cardHoldername: ['', Validators.required],
+      cvv: ['', Validators.required]
+    })
   }
   goBack() {
     window.history.back();
@@ -28,5 +37,13 @@ export class PaymentComponent implements OnInit {
       this.backBtn = true;
     }
         
+  }
+  get f() {
+    return this.formvalue.controls;
+  }
+
+  onSubmit() {
+    this.submitted = true;
+  
   }
 }

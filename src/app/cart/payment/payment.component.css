@@ -64,3 +64,8 @@ color: black;
     top: 70px;
     position: relative;
 }
+.error {
+    color: red;
+    /* //margin-left: 127px */
+    font-style: italic;
+}
