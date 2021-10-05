@@ -30,7 +30,7 @@ public searchText : string;
     this.api.getcartProduct()
     .subscribe(res =>{
    this.productList=res;
-  //  this.tempProductList=[...this.productList]
+  this.tempProductList=[...this.productList]
    this.productList.forEach((a:any) => {
      Object.assign(a,{quantity:1,total:a.price});
    });
