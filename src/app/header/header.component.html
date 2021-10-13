@@ -4,13 +4,22 @@
       <span style="font-size:30px;cursor:pointer" (click)="openNav()">&#9776; </span>
     <i class="fas fa-shipping-fast" style="font-size: 40px;">&nbsp;</i>
   
-    <strong style="font-size: 30px;"[routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Shopee</strong>
+    <strong style="font-size: 30px;" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Shopee</strong>
     <div class="form-group"  *ngIf="userDetails?.role=='User'">
       <input [(ngModel)]="searchText" (ngModelChange)="inputChange(searchText)" type="text" class="form-control" placeholder="search Product">
-    
     </div>
     <span  *ngIf="userDetails?.role=='User'" class="fa fa-search search-icon"></span>
+    <div *ngIf="userDetails?.role=='Admin'" >
+       
+        <button type="button" [routerLink]="['/productlist',userDetails?.id]" routerLinkActive="active" class="backbutton">
+          <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+        </button>
     </div>
+  </div>
+  <!-- (click)="goBack()" -->
+  <!-- *ngIf="backbutton" -->
+
+  
     <!-- <a class="routerclass" routerLink="/product" routerLinkActive="active">Product</a>
     <a class="routerclass" routerLink="/cart" routerLinkActive="active">Cart</a> -->
   <button *ngIf="userDetails?.role=='User'" [routerLink]="['/addcart',userDetails?.id]"class="btn btn-primary">
@@ -34,7 +43,7 @@
     <div class="overlay-content">
       <!-- <a class="routerclass" style="color:black" routerLink="/product" routerLinkActive="active">Product</a> -->
   <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" [routerLink]="['/cart',userDetails?.id]" routerLinkActive="active">Cart</a>
-  <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" [routerLink]="['/addcart',userDetails?.id]" routerLinkActive="active">AddCart</a>
+  <a class="routerclass" *ngIf="userDetails?.role=='User'" style="color:black" >AddCart</a>
   <a class="routerclass" *ngIf="userDetails?.role=='User'" routerLink="/file" style="color:black"  routerLinkActive="active">file</a>
 </div>
   </div>
